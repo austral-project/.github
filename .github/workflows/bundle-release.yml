@@ -1,7 +1,7 @@
 # Creates the GitHub Release of a bundle when a vX.Y.Z tag is pushed.
 # The release notes are extracted from the matching section of CHANGELOG.md.
 # Called from each bundle with:
-#   uses: austral-project/.github/.github/workflows/bundle-release.yml@main
+#   uses: austral-project/.github/.github/workflows/bundle-release.yml@master
 name: Bundle release
 
 on:

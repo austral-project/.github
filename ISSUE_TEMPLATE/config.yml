@@ -1,7 +1,7 @@
 blank_issues_enabled: false
 contact_links:
   - name: 🔒 Report a security vulnerability
-    url: https://github.com/austral-project/.github/blob/main/SECURITY.md
+    url: https://github.com/austral-project/.github/blob/master/SECURITY.md
     about: Never disclose a vulnerability in an issue. Follow the security policy.
   - name: 📚 Documentation
     url: https://austral.dev

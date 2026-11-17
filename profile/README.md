@@ -6,7 +6,7 @@
 <p align="center">
   <a href="https://austral.dev">Website</a> ·
   <a href="https://github.com/austral-project/skeleton">Start a project</a> ·
-  <a href="https://github.com/austral-project/.github/blob/main/CONTRIBUTING.md">Contribute</a>
+  <a href="https://github.com/austral-project/.github/blob/master/CONTRIBUTING.md">Contribute</a>
 </p>
 
 ---
@@ -41,4 +41,4 @@ composer create-project austral/skeleton my-project "^4.0"
 
 ## Security
 
-Found a vulnerability? Do not open a public issue: use the **"Report a vulnerability"** button in the *Security* tab of the repository concerned (see the [security policy](https://github.com/austral-project/.github/blob/main/SECURITY.md)).
+Found a vulnerability? Do not open a public issue: use the **"Report a vulnerability"** button in the *Security* tab of the repository concerned (see the [security policy](https://github.com/austral-project/.github/blob/master/SECURITY.md)).

@@ -1,6 +1,6 @@
 # CI shared by all the Austral bundles.
 # Called from each bundle with:
-#   uses: austral-project/.github/.github/workflows/bundle-ci.yml@main
+#   uses: austral-project/.github/.github/workflows/bundle-ci.yml@master
 name: Bundle CI
 
 on:
