@@ -39,6 +39,17 @@ composer create-project austral/skeleton my-project "^4.0"
 | Website | [website-bundle](https://github.com/austral-project/website-bundle) |
 | Tools | [skeleton](https://github.com/austral-project/skeleton) · [maker-bundle](https://github.com/austral-project/maker-bundle) |
 
+## Docker images
+
+Ready-to-use images for Austral projects, published on Docker Hub under [`australproject`](https://hub.docker.com/u/australproject). One Git branch = one image tag.
+
+| Image | Purpose | Tags |
+|-------|---------|------|
+| [docker-php](https://github.com/austral-project/docker-php) | PHP-FPM, configured with environment variables, root or any UID/GID | `8.4` (default), `8.2`, `8.1`… |
+| [docker-nginx](https://github.com/austral-project/docker-nginx) | Nginx for PHP-FPM or static/SPA sites, Brotli, error pages | `1.28` (default), `1.26`… |
+| [docker-image-optimizer](https://github.com/austral-project/docker-image-optimizer) | HTTP service converting images to WebP, AVIF, MozJPEG, OxiPNG | `sharp` (default), `squoosh` |
+| [docker-alpine](https://github.com/austral-project/docker-alpine) | Alpine base image used by the images above | `3.23` (default)… |
+
 ## Security
 
 Found a vulnerability? Do not open a public issue: use the **"Report a vulnerability"** button in the *Security* tab of the repository concerned (see the [security policy](https://github.com/austral-project/.github/blob/master/SECURITY.md)).
