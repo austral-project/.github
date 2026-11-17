@@ -1,0 +1,74 @@
+# Creates the GitHub Release of a bundle when a vX.Y.Z tag is pushed.
+# The release notes are extracted from the matching section of CHANGELOG.md.
+# Called from each bundle with:
+#   uses: austral-project/.github/.github/workflows/bundle-release.yml@main
+name: Bundle release
+
+on:
+  workflow_call:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Extract the CHANGELOG notes
+        id: notes
+        env:
+          TAG: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          VERSION="${TAG#v}"
+          if [[ ! "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-(alpha|beta|RC)[.0-9]*)?$ ]]; then
+            echo "::error::Invalid tag '$TAG' (expected: vX.Y.Z or vX.Y.Z-beta.N)"; exit 1
+          fi
+          # Section between "## [VERSION]" and the next level-2 heading,
+          # without the empty subheadings or the reference links at the bottom of the file
+          python3 - "$VERSION" <<'PY'
+          import re, sys
+          v = sys.argv[1]
+          out, found = [], False
+          for line in open("CHANGELOG.md", encoding="utf-8"):
+              if re.match(r"^## \[" + re.escape(v) + r"\]", line):
+                  found = True
+                  continue
+              if found and (line.startswith("## ") or re.match(r"^\[[^\]]+\]: https?://", line)):
+                  break
+              if found:
+                  out.append(line.rstrip("\n"))
+          blocks, current = [], None
+          for line in out:
+              if line.startswith("### "):
+                  current = [line, []]
+                  blocks.append(current)
+              elif current is None:
+                  blocks.append([None, [line]]) if line.strip() else None
+              else:
+                  current[1].append(line)
+          text = []
+          for title, body in blocks:
+              if title is None:
+                  text += body
+              elif any(l.strip() for l in body):
+                  text += [title] + body
+          open("release-notes.md", "w", encoding="utf-8").write("\n".join(text).strip() + "\n" if any(l.strip() for l in text) else "")
+          PY
+          if [ ! -s release-notes.md ]; then
+            echo "::error::Section '## [$VERSION]' missing or empty in CHANGELOG.md"; exit 1
+          fi
+          if [[ "$VERSION" == *-* ]]; then echo "prerelease=--prerelease" >> "$GITHUB_OUTPUT"; else echo "prerelease=" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Create the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          gh release create "$TAG" \
+            --title "$TAG" \
+            --notes-file release-notes.md \
+            --verify-tag \
+            ${{ steps.notes.outputs.prerelease }}

@@ -1,0 +1,16 @@
+name: ❓ Question
+description: A question about using Austral
+labels: ["question"]
+body:
+  - type: input
+    id: austral-version
+    attributes:
+      label: Austral version
+      placeholder: "4.0.2"
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+      description: What you are trying to do and what you have already tried.
+    validations:
+      required: true

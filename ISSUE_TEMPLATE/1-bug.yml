@@ -1,0 +1,53 @@
+name: 🐛 Bug
+description: Unexpected behavior or an error
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to report this bug. **A security vulnerability must not be reported here**: use the Security tab → Report a vulnerability.
+  - type: input
+    id: austral-version
+    attributes:
+      label: Austral version
+      description: "Output of `composer show 'austral/*'`, or at least the version of the bundle concerned"
+      placeholder: "4.0.2"
+    validations:
+      required: true
+  - type: input
+    id: symfony-version
+    attributes:
+      label: Symfony version
+      placeholder: "7.4.1"
+    validations:
+      required: true
+  - type: input
+    id: php-version
+    attributes:
+      label: PHP version
+      placeholder: "8.3.14"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What happens, and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Error / stack trace
+      description: Error message and full stack trace if available.
+      render: shell

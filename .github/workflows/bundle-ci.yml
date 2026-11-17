@@ -1,0 +1,103 @@
+# CI shared by all the Austral bundles.
+# Called from each bundle with:
+#   uses: austral-project/.github/.github/workflows/bundle-ci.yml@main
+name: Bundle CI
+
+on:
+  workflow_call:
+    inputs:
+      php-versions:
+        description: "Tested PHP versions (JSON array)"
+        type: string
+        default: '["8.2", "8.3", "8.4"]'
+      quality-php-version:
+        description: "PHP version for cs-fixer and phpstan"
+        type: string
+        default: "8.2"
+      run-phpstan:
+        type: boolean
+        default: true
+      run-cs-fixer:
+        type: boolean
+        default: true
+      run-require-checker:
+        description: "Checks that every class used is declared in composer.json"
+        type: boolean
+        default: true
+      run-deptrac:
+        description: "Forbids upward dependencies (requires deptrac.yaml)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: composer validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ inputs.quality-php-version }}
+          coverage: none
+      - run: composer validate --strict --no-check-lock
+
+  quality:
+    name: Quality (cs-fixer, phpstan)
+    runs-on: ubuntu-latest
+    needs: validate
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ inputs.quality-php-version }}
+          coverage: none
+      - uses: ramsey/composer-install@v3
+      - name: PHP-CS-Fixer
+        if: ${{ inputs.run-cs-fixer }}
+        run: vendor/bin/php-cs-fixer fix --dry-run --diff --ansi
+      - name: PHPStan
+        if: ${{ inputs.run-phpstan }}
+        run: vendor/bin/phpstan analyse --no-progress --ansi
+      - name: Deptrac
+        if: ${{ inputs.run-deptrac }}
+        run: vendor/bin/deptrac analyse --no-progress
+
+  require-checker:
+    name: Declared dependencies
+    if: ${{ inputs.run-require-checker }}
+    runs-on: ubuntu-latest
+    needs: validate
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ inputs.quality-php-version }}
+          coverage: none
+          tools: composer-require-checker
+      - uses: ramsey/composer-install@v3
+        with:
+          composer-options: "--no-dev"
+      - run: composer-require-checker check composer.json
+
+  tests:
+    name: PHPUnit (PHP ${{ matrix.php }}, ${{ matrix.dependencies }})
+    runs-on: ubuntu-latest
+    needs: validate
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ${{ fromJSON(inputs.php-versions) }}
+        dependencies: [lowest, highest]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+      - uses: ramsey/composer-install@v3
+        with:
+          dependency-versions: ${{ matrix.dependencies }}
+      - run: vendor/bin/phpunit --colors=always
