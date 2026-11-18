@@ -34,7 +34,7 @@ composer check   # cs-fixer (dry-run) + phpstan + phpunit
 
 ## Coding style
 
-- PHP ≥ 8.2, `declare(strict_types=1);` in every file.
+- PHP ≥ 8.4, `declare(strict_types=1);` in every file.
 - PHP-CS-Fixer `@Symfony` + `@Symfony:risky` rules (`composer cs-fix` fixes them automatically).
 - PHPStan at the level set in the bundle's `phpstan.dist.neon`, with no new error.
 - A bundle only depends on lower layers (see the organization home page). No reference to `App\`.
