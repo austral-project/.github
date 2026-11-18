@@ -24,7 +24,7 @@ composer create-project austral/skeleton my-project "^4.0"
 | Version | Symfony | PHP | Branch | Status |
 |---------|---------|-----|--------|--------|
 | **4.x** | 7.4 LTS | ≥ 8.2 | `4.x` | Active development |
-| 3.1 | 5.4 / 6.4 | ≥ 8.0 | `3.1` | Security fixes only |
+| 3.1 | 5.4 / 6.4 | ≥ 8.0 | `3.1` | Bug and security fixes until 4.0.0, then security fixes for 12 months |
 | 3.0 | 5.4 | ≥ 8.0 | `3.0` | No longer maintained |
 
 ## The bundles

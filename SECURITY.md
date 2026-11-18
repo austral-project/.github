@@ -2,11 +2,11 @@
 
 ## Supported versions
 
-| Version | Security fixes |
-|---------|----------------|
-| 4.x     | ✅ |
-| 3.1     | ✅ until 4.1 is released |
-| 3.0 and earlier | ❌ |
+| Version | Bug fixes | Security fixes |
+|---------|-----------|----------------|
+| 4.x     | ✅ | ✅ |
+| 3.1     | ✅ until 4.0.0 is released | ✅ until 12 months after the 4.0.0 release |
+| 3.0 and earlier | ❌ | ❌ |
 
 ## Reporting a vulnerability
 

@@ -29,7 +29,7 @@ composer check   # cs-fixer (dry-run) + phpstan + phpunit
 - One pull request = one topic.
 - Add a test that fails without your fix.
 - Add a line to the `## [Unreleased]` section of `CHANGELOG.md`.
-- Commit messages follow [Conventional Commits](https://www.conventionalcommits.org/): `fix(form): ...`, `feat(admin): ...`, `docs: ...`, `refactor: ...`, `test: ...`, `chore: ...`. A BC break is marked with `!` (`feat(entity)!: ...`).
+- Commit messages follow [Conventional Commits](https://www.conventionalcommits.org/): `fix(form): ...`, `feat(admin): ...`, `docs: ...`, `perf: ...`, `refactor: ...`, `test: ...`, `chore: ...`. A BC break is marked with `!` (`feat(entity)!: ...`).
 - Code, comments, documentation and commit messages are written in English.
 
 ## Coding style
