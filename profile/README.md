@@ -39,6 +39,36 @@ composer create-project austral/skeleton my-project "^4.0"
 | Website | [website-bundle](https://github.com/austral-project/website-bundle) |
 | Tools | [skeleton](https://github.com/austral-project/skeleton) · [maker-bundle](https://github.com/austral-project/maker-bundle) |
 
+## Build status
+
+Continuous integration of the `4.x` branch of each repository.
+
+| Layer | Package | CI `4.x` |
+|-------|---------|----------|
+| Contracts | [contracts](https://github.com/austral-project/contracts) | [![CI](https://github.com/austral-project/contracts/actions/workflows/ci.yml/badge.svg?branch=4.x)](https://github.com/austral-project/contracts/actions/workflows/ci.yml?query=branch%3A4.x) |
+| Core | [tools-bundle](https://github.com/austral-project/tools-bundle) | [![CI](https://github.com/austral-project/tools-bundle/actions/workflows/ci.yml/badge.svg?branch=4.x)](https://github.com/austral-project/tools-bundle/actions/workflows/ci.yml?query=branch%3A4.x) |
+|  | [entity-bundle](https://github.com/austral-project/entity-bundle) | [![CI](https://github.com/austral-project/entity-bundle/actions/workflows/ci.yml/badge.svg?branch=4.x)](https://github.com/austral-project/entity-bundle/actions/workflows/ci.yml?query=branch%3A4.x) |
+| Entity capabilities | [entity-file-bundle](https://github.com/austral-project/entity-file-bundle) | [![CI](https://github.com/austral-project/entity-file-bundle/actions/workflows/ci.yml/badge.svg?branch=4.x)](https://github.com/austral-project/entity-file-bundle/actions/workflows/ci.yml?query=branch%3A4.x) |
+|  | [entity-translate-bundle](https://github.com/austral-project/entity-translate-bundle) | [![CI](https://github.com/austral-project/entity-translate-bundle/actions/workflows/ci.yml/badge.svg?branch=4.x)](https://github.com/austral-project/entity-translate-bundle/actions/workflows/ci.yml?query=branch%3A4.x) |
+|  | [http-bundle](https://github.com/austral-project/http-bundle) | [![CI](https://github.com/austral-project/http-bundle/actions/workflows/ci.yml/badge.svg?branch=4.x)](https://github.com/austral-project/http-bundle/actions/workflows/ci.yml?query=branch%3A4.x) |
+|  | [elastic-search-bundle](https://github.com/austral-project/elastic-search-bundle) | [![CI](https://github.com/austral-project/elastic-search-bundle/actions/workflows/ci.yml/badge.svg?branch=4.x)](https://github.com/austral-project/elastic-search-bundle/actions/workflows/ci.yml?query=branch%3A4.x) |
+|  | [cache-bundle](https://github.com/austral-project/cache-bundle) | [![CI](https://github.com/austral-project/cache-bundle/actions/workflows/ci.yml/badge.svg?branch=4.x)](https://github.com/austral-project/cache-bundle/actions/workflows/ci.yml?query=branch%3A4.x) |
+| Back office | [form-bundle](https://github.com/austral-project/form-bundle) | [![CI](https://github.com/austral-project/form-bundle/actions/workflows/ci.yml/badge.svg?branch=4.x)](https://github.com/austral-project/form-bundle/actions/workflows/ci.yml?query=branch%3A4.x) |
+|  | [list-bundle](https://github.com/austral-project/list-bundle) | [![CI](https://github.com/austral-project/list-bundle/actions/workflows/ci.yml/badge.svg?branch=4.x)](https://github.com/austral-project/list-bundle/actions/workflows/ci.yml?query=branch%3A4.x) |
+|  | [filter-bundle](https://github.com/austral-project/filter-bundle) | [![CI](https://github.com/austral-project/filter-bundle/actions/workflows/ci.yml/badge.svg?branch=4.x)](https://github.com/austral-project/filter-bundle/actions/workflows/ci.yml?query=branch%3A4.x) |
+|  | [design-bundle](https://github.com/austral-project/design-bundle) | [![CI](https://github.com/austral-project/design-bundle/actions/workflows/ci.yml/badge.svg?branch=4.x)](https://github.com/austral-project/design-bundle/actions/workflows/ci.yml?query=branch%3A4.x) |
+|  | [security-bundle](https://github.com/austral-project/security-bundle) | [![CI](https://github.com/austral-project/security-bundle/actions/workflows/ci.yml/badge.svg?branch=4.x)](https://github.com/austral-project/security-bundle/actions/workflows/ci.yml?query=branch%3A4.x) |
+|  | [admin-bundle](https://github.com/austral-project/admin-bundle) | [![CI](https://github.com/austral-project/admin-bundle/actions/workflows/ci.yml/badge.svg?branch=4.x)](https://github.com/austral-project/admin-bundle/actions/workflows/ci.yml?query=branch%3A4.x) |
+| Features | [seo-bundle](https://github.com/austral-project/seo-bundle) | [![CI](https://github.com/austral-project/seo-bundle/actions/workflows/ci.yml/badge.svg?branch=4.x)](https://github.com/austral-project/seo-bundle/actions/workflows/ci.yml?query=branch%3A4.x) |
+|  | [content-block-bundle](https://github.com/austral-project/content-block-bundle) | [![CI](https://github.com/austral-project/content-block-bundle/actions/workflows/ci.yml/badge.svg?branch=4.x)](https://github.com/austral-project/content-block-bundle/actions/workflows/ci.yml?query=branch%3A4.x) |
+|  | [graphic-items-bundle](https://github.com/austral-project/graphic-items-bundle) | [![CI](https://github.com/austral-project/graphic-items-bundle/actions/workflows/ci.yml/badge.svg?branch=4.x)](https://github.com/austral-project/graphic-items-bundle/actions/workflows/ci.yml?query=branch%3A4.x) |
+|  | [social-network-bundle](https://github.com/austral-project/social-network-bundle) | [![CI](https://github.com/austral-project/social-network-bundle/actions/workflows/ci.yml/badge.svg?branch=4.x)](https://github.com/austral-project/social-network-bundle/actions/workflows/ci.yml?query=branch%3A4.x) |
+|  | [email-bundle](https://github.com/austral-project/email-bundle) | [![CI](https://github.com/austral-project/email-bundle/actions/workflows/ci.yml/badge.svg?branch=4.x)](https://github.com/austral-project/email-bundle/actions/workflows/ci.yml?query=branch%3A4.x) |
+|  | [notify-bundle](https://github.com/austral-project/notify-bundle) | [![CI](https://github.com/austral-project/notify-bundle/actions/workflows/ci.yml/badge.svg?branch=4.x)](https://github.com/austral-project/notify-bundle/actions/workflows/ci.yml?query=branch%3A4.x) |
+| Website | [website-bundle](https://github.com/austral-project/website-bundle) | [![CI](https://github.com/austral-project/website-bundle/actions/workflows/ci.yml/badge.svg?branch=4.x)](https://github.com/austral-project/website-bundle/actions/workflows/ci.yml?query=branch%3A4.x) |
+| Tools | [skeleton](https://github.com/austral-project/skeleton) | [![CI](https://github.com/austral-project/skeleton/actions/workflows/ci.yml/badge.svg?branch=4.x)](https://github.com/austral-project/skeleton/actions/workflows/ci.yml?query=branch%3A4.x) |
+|  | [maker-bundle](https://github.com/austral-project/maker-bundle) | [![CI](https://github.com/austral-project/maker-bundle/actions/workflows/ci.yml/badge.svg?branch=4.x)](https://github.com/austral-project/maker-bundle/actions/workflows/ci.yml?query=branch%3A4.x) |
+
 ## Docker images
 
 Ready-to-use images for Austral projects, published on Docker Hub under [`australproject`](https://hub.docker.com/u/australproject). One Git branch = one image tag.
