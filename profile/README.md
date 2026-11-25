@@ -19,6 +19,23 @@ Austral is a set of **open source (MIT)** Symfony bundles to build a back office
 composer create-project austral/skeleton my-project "^4.0"
 ```
 
+To add Austral bundles to an existing Symfony project, declare the [Austral recipes](https://github.com/austral-project/recipes) in its `composer.json`: Symfony Flex then registers each bundle and creates its configuration.
+
+```json
+"extra": {
+    "symfony": {
+        "endpoint": [
+            "https://api.github.com/repos/austral-project/recipes/contents/index.json?ref=flex/master",
+            "flex://defaults"
+        ]
+    }
+}
+```
+
+```bash
+composer require austral/security-bundle
+```
+
 ## Maintained versions
 
 | Version | Symfony | PHP | Branch | Status |
@@ -37,7 +54,7 @@ composer create-project austral/skeleton my-project "^4.0"
 | Back office | [form-bundle](https://github.com/austral-project/form-bundle) · [list-bundle](https://github.com/austral-project/list-bundle) · [filter-bundle](https://github.com/austral-project/filter-bundle) · [design-bundle](https://github.com/austral-project/design-bundle) · [security-bundle](https://github.com/austral-project/security-bundle) · [admin-bundle](https://github.com/austral-project/admin-bundle) |
 | Features | [seo-bundle](https://github.com/austral-project/seo-bundle) · [domain-bundle](https://github.com/austral-project/domain-bundle) · [content-block-bundle](https://github.com/austral-project/content-block-bundle) · [graphic-items-bundle](https://github.com/austral-project/graphic-items-bundle) · [social-network-bundle](https://github.com/austral-project/social-network-bundle) · [email-bundle](https://github.com/austral-project/email-bundle) · [notify-bundle](https://github.com/austral-project/notify-bundle) |
 | Website | [website-bundle](https://github.com/austral-project/website-bundle) |
-| Tools | [skeleton](https://github.com/austral-project/skeleton) · [maker-bundle](https://github.com/austral-project/maker-bundle) |
+| Tools | [skeleton](https://github.com/austral-project/skeleton) · [maker-bundle](https://github.com/austral-project/maker-bundle) · [recipes](https://github.com/austral-project/recipes) (Symfony Flex) |
 
 ## Build status
 

@@ -17,6 +17,8 @@ Thank you for your interest! This guide applies to all the repositories of the `
 
 Open your pull request against the **oldest maintained branch** that contains the bug; the maintainer then merges the fix up to `4.x`.
 
+The repositories that are not packages ([.github](https://github.com/austral-project/.github), [dev](https://github.com/austral-project/dev), [recipes](https://github.com/austral-project/recipes)) only have a `master` branch.
+
 ## Preparing a pull request
 
 ```bash
@@ -29,6 +31,7 @@ composer check   # cs-fixer (dry-run) + phpstan + phpunit
 - One pull request = one topic.
 - Add a test that fails without your fix.
 - Add a line to the `## [Unreleased]` section of `CHANGELOG.md`.
+- If the change affects what a project copies (configuration, routes, entities of the application), update the recipe of the bundle in [austral-project/recipes](https://github.com/austral-project/recipes) too.
 - Commit messages follow [Conventional Commits](https://www.conventionalcommits.org/): `fix(form): ...`, `feat(admin): ...`, `docs: ...`, `perf: ...`, `refactor: ...`, `test: ...`, `chore: ...`. A BC break is marked with `!` (`feat(entity)!: ...`).
 - Code, comments, documentation and commit messages are written in English.
 
