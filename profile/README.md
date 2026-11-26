@@ -58,7 +58,7 @@ composer require austral/security-bundle
 
 ## Build status
 
-Continuous integration of the `4.x` branch of each repository.
+Continuous integration of the `4.x` branch of each repository (`master` for the recipes, which have no version branch).
 
 | Layer | Package | CI `4.x` |
 |-------|---------|----------|
@@ -87,6 +87,7 @@ Continuous integration of the `4.x` branch of each repository.
 | Website | [website-bundle](https://github.com/austral-project/website-bundle) | [![CI](https://github.com/austral-project/website-bundle/actions/workflows/ci.yml/badge.svg?branch=4.x)](https://github.com/austral-project/website-bundle/actions/workflows/ci.yml?query=branch%3A4.x) |
 | Tools | [skeleton](https://github.com/austral-project/skeleton) | [![CI](https://github.com/austral-project/skeleton/actions/workflows/ci.yml/badge.svg?branch=4.x)](https://github.com/austral-project/skeleton/actions/workflows/ci.yml?query=branch%3A4.x) |
 |  | [maker-bundle](https://github.com/austral-project/maker-bundle) | [![CI](https://github.com/austral-project/maker-bundle/actions/workflows/ci.yml/badge.svg?branch=4.x)](https://github.com/austral-project/maker-bundle/actions/workflows/ci.yml?query=branch%3A4.x) |
+|  | [recipes](https://github.com/austral-project/recipes) | [![Flex endpoint](https://github.com/austral-project/recipes/actions/workflows/flex-endpoint.yml/badge.svg?branch=master)](https://github.com/austral-project/recipes/actions/workflows/flex-endpoint.yml?query=branch%3Amaster) |
 
 ## Docker images
 
