@@ -32,6 +32,10 @@ on:
 permissions:
   contents: read
 
+# The bundles depend on each other (security-bundle <-> admin-bundle in require-dev): the root package is 4.x
+env:
+  COMPOSER_ROOT_VERSION: 4.x-dev
+
 jobs:
   validate:
     name: composer validate
